@@ -1,0 +1,29 @@
+id: com.obsproject.Studio.Plugin.SourceRecord
+branch: stable
+runtime: com.obsproject.Studio
+runtime-version: stable
+sdk: org.kde.Sdk//6.6
+build-extension: true
+separate-locales: false
+build-options:
+  prefix: /app/plugins/SourceRecord
+  strip: true
+
+modules:
+  - name: source-record-plugin
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DBUILD_OUT_OF_TREE=On
+      - -DLIB_OUT_DIR=/lib/obs-plugins
+    sources:
+      - type: archive
+        url: https://github.com/exeldro/obs-source-record/archive/refs/tags/0.4.4.tar.gz
+        sha256: 41557e576cc6b750301e8ba18c8b8c593f770fabf4f23090a0b43cc8e16753f0
+  - name: metadata
+    buildsystem: simple
+    build-commands:
+      - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
+    sources:
+      - type: file
+        path: com.obsproject.Studio.Plugin.SourceRecord.metainfo.xml
