@@ -1,7 +1,7 @@
 Source Record for OBS
 ======================
 
-![image](https://github.com/user-attachments/assets/235f1202-e216-4aa9-857c-a643ffbdae4b)
+![image](https://github.com/user-attachments/assets/9ae86cf9-5a9e-4b3c-9f83-f8483421ebf9)
 
 Installation
 -----------
